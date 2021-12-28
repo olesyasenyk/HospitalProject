@@ -1,0 +1,15 @@
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\HospitalProject.DataAccess.exe
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\HospitalProject.DataAccess.deps.json
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\HospitalProject.DataAccess.runtimeconfig.json
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\HospitalProject.DataAccess.dll
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\ref\HospitalProject.DataAccess.dll
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\bin\Debug\net6.0\HospitalProject.DataAccess.pdb
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.AssemblyInfo.cs
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.dll
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\ref\HospitalProject.DataAccess.dll
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.pdb
+C:\Users\Asus VivoBook\source\repos\HospitalProject\HospitalProject.DataAccess\obj\Debug\net6.0\HospitalProject.DataAccess.genruntimeconfig.cache
