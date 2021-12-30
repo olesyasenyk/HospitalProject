@@ -108,9 +108,23 @@ namespace HospitalProject.BusinessLogic
     }
     public class BusinessLogic
     {
+        //public static Patient SearchPatient(string name) and by ID
+        //{
+
+        //}
         public static async Task Run()
         {
-            Console.WriteLine("Select an action:\n1 - Add a patient\n2 - Search a patient\n3 - Edit a patient\n4 - Add a record\nEXIT - to exit the application");
+            Console.WriteLine("Select an action:" +
+                "\n1 - Add a patient" +
+                "\n2 - Search a patient" +
+                "\n3 - Edit a patient" +
+                "\n4 - Add a record" +
+                "\n5 - Search a record" +
+                "\n6 - Edit a record" +
+                "\n7 - Search a doctor" +
+                "\n - Search a department" +
+                "\n - Search a ward" +
+                "\nEXIT - to exit the application");
 
             string userChoice = Console.ReadLine().Trim();
 
@@ -160,8 +174,8 @@ namespace HospitalProject.BusinessLogic
                     Console.WriteLine("Enter Last Name: ");
                     string surname = Console.ReadLine().Trim();
                     Console.WriteLine();
-
-                    string queryString2 = $@"
+                    //write 2 overloads for Patient search - by name and by ID - 2 static methods
+                    string queryString2 = $@" 
                     SELECT
                     p.[Id],
                     p.[First Name],
@@ -250,7 +264,13 @@ namespace HospitalProject.BusinessLogic
 
                     while (true)
                     {
-                        Console.WriteLine("What would you like to edit?\n1 - First Name\n2 - Last Name\n3 - Gender\n4 - Birth Date\n5 - Address\n6 - Finish editing and go to the main menu");
+                        Console.WriteLine("What would you like to edit?" +
+                            "\n1 - First Name" +
+                            "\n2 - Last Name" +
+                            "\n3 - Gender" +
+                            "\n4 - Birth Date" +
+                            "\n5 - Address" +
+                            "\n6 - Finish editing and go to the main menu");
                         string editChoice = Console.ReadLine().Trim();
 
                         switch (editChoice)
@@ -316,11 +336,32 @@ namespace HospitalProject.BusinessLogic
                     }
 
                 case "4":
-                    Console.WriteLine("You can create a record for an existing patient only. Enter Patient ID:");
+                    Console.WriteLine("You can create a record for an existing patient only. Enter Patient ID:"); // plus by name
                     string patientId = Console.ReadLine().Trim();
+                    Console.WriteLine();
 
-                    //check if patient exists:
+                    string queryString5 = $@"
+                    SELECT
+                    p.[Id],
+                    p.[First Name],
+                    p.[Last Name],
+                    p.[Gender],
+                    p.[Birth Date],
+                    p.[Address]
+                    FROM [dbo].[Patient] AS p                  
+                    WHERE p.[Id] = '{patientId}'";
 
+                    SqlConnection connection5 = new(connectionString);
+                    connection5.Open();
+                    SqlCommand command5 = new(queryString5, connection5);
+                    SqlDataReader reader5 = command5.ExecuteReader();
+
+                    if (!reader5.HasRows)
+                    {
+                        Console.WriteLine("Nothing found");
+                        Console.WriteLine();
+                        break;
+                    }
 
                     Record record = new();
                     Console.WriteLine("Hospitalization Date: ");
@@ -337,7 +378,7 @@ namespace HospitalProject.BusinessLogic
                     Console.WriteLine("Ward ID: ");
                     record.WardID = Int32.Parse(Console.ReadLine().Trim());//menu
 
-                    string queryString5 = $@"
+                    string queryString6 = $@"
                     INSERT INTO [dbo].[Record]
                     ([Hospitalization Date], 
                     [Discharge Date], 
@@ -348,9 +389,9 @@ namespace HospitalProject.BusinessLogic
                     [Ward ID]
                     VALUES('{record.HospitalizationDate}', '{record.DischargeDate}', '{record.Diagnosis}', '{record.PatientID}', '{record.DoctorID}, {record.DepartmentID}, {record.WardID}')";
 
-                    SqlConnection connection5 = new(connectionString);
+                    SqlConnection connection6 = new(connectionString);
                     connection5.Open();
-                    SqlCommand command5 = new(queryString5, connection5);
+                    SqlCommand command6 = new(queryString5, connection5);
                     int result5 = command5.ExecuteNonQuery();
 
                     // Check Error
