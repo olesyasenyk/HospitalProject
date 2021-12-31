@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj": {}
+    "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj": {
+    "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj",
         "projectName": "HospitalProject.BusinessLogic",
-        "projectPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Asus VivoBook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\olesia.falafivka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Asus VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\olesia.falafivka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj"
+              "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj"
               }
             }
           }
@@ -47,12 +43,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -63,30 +53,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj": {
+    "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj",
         "projectName": "HospitalProject.DataAccess",
-        "projectPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Asus VivoBook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\HospitalProject.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\olesia.falafivka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Asus VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\olesia.falafivka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -121,30 +102,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj": {
+    "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj",
         "projectName": "HospitalProject.Presentation",
-        "projectPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj",
-        "packagesPath": "C:\\Users\\Asus VivoBook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\obj\\",
+        "projectPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\HospitalProject.Presentation.csproj",
+        "packagesPath": "C:\\Users\\olesia.falafivka\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.Presentation\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Asus VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\olesia.falafivka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,8 +130,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Asus VivoBook\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj"
+              "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\olesia.falafivka\\source\\repos\\HospitalProject\\HospitalProject.BusinessLogic\\HospitalProject.BusinessLogic.csproj"
               }
             }
           }
@@ -183,12 +155,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

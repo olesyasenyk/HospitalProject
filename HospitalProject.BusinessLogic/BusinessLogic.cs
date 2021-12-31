@@ -115,65 +115,60 @@ namespace HospitalProject.BusinessLogic
         public static async Task Run()
         {
             Console.WriteLine("Select an action:" +
-                "\n1 - Add a patient" +
-                "\n2 - Search a patient" +
-                "\n3 - Edit a patient" +
-                "\n4 - Add a record" +
-                "\n5 - Search a record" +
-                "\n6 - Edit a record" +
-                "\n7 - Search a doctor" +
-                "\n - Search a department" +
-                "\n - Search a ward" +
+                "\n1. Search a patient" +
+                "\n2. Add a patient" +
+                "\n3. View departments" +
+                "\n4. Search a department" +
                 "\nEXIT - to exit the application");
 
-            string userChoice = Console.ReadLine().Trim();
+            string userChoice = Int32.Parse(Console.ReadLine().Trim());
 
             string connectionString = @"Data Source=.\SQLEXPRESS;Database=Hospital;Integrated Security=True";
 
             switch (userChoice)
-            {
-                case "1":
-                    Patient patient = new();
-                    Console.WriteLine("First Name: ");
-                    patient.FirstName = Console.ReadLine().Trim();
-                    Console.WriteLine("Last Name: ");
-                    patient.LastName = Console.ReadLine().Trim(); ;
-                    Console.WriteLine("Gender: ");
-                    patient.Gender = Console.ReadLine().Trim(); ;
-                    Console.WriteLine("Birth Date: ");
-                    patient.BirthDate = DateTime.Parse(Console.ReadLine().Trim());
-                    Console.WriteLine("Address: ");
-                    patient.Address = Console.ReadLine().Trim(); ;
-
-                    string queryString = $@"
-                    INSERT INTO 
-                    [dbo].[Patient]
-                    ([First Name], 
-                    [Last Name], 
-                    [Gender], 
-                    [Birth Date], 
-                    [Address])
-                    VALUES('{patient.FirstName}', '{patient.LastName}', '{patient.Gender}', '{patient.BirthDate}', '{patient.Address}')";
-
-                    SqlConnection connection = new(connectionString);
-                    connection.Open();
-                    SqlCommand command = new(queryString, connection);
-                    int result = command.ExecuteNonQuery();
-
-                    // Check Error
-                    if (result < 0)
-                    {
-                        Console.WriteLine("Error inserting data into Database");
-                        break;
-                    }
-                    Console.WriteLine("The patient was added successfully");
-
-                    break;
-
-                case "2":
-                    Console.WriteLine("Enter Last Name: ");
-                    string surname = Console.ReadLine().Trim();
+            {   //Search a patient
+                case 1:
+                    Console.WriteLine("Enter patient ID or Last Name: ");
+                    string patient = Console.ReadLine().Trim();
                     Console.WriteLine();
+
+                    if (patient.All(char.isDigit))
+                    {
+                        string queryString1 = $@"
+                        SELECT
+                        p.[Id],
+                        p.[First Name],
+                        p.[Last Name],
+                        p.[Gender],
+                        p.[Birth Date],
+                        p.[Address]
+                        FROM [dbo].[Patient] AS p                  
+                        WHERE p.[Id] = '{Id}'";
+
+                        SqlConnection connection1 = new(connectionString);
+                        connection1.Open();
+                        SqlCommand command1 = new(queryString3, connection3);
+                        SqlDataReader reader1 = command3.ExecuteReader();
+
+                        if (!reader1.HasRows)
+                        {
+                            Console.WriteLine("Nothing found");
+                            Console.WriteLine();
+                            break;
+                        }
+
+                        while (reader1.Read())
+                        {
+                            Console.WriteLine($"Patient ID: {reader3[0]}");
+                            Console.WriteLine($"First Name: {reader3[1]}");
+                            Console.WriteLine($"Last Name: {reader3[2]}");
+                            Console.WriteLine($"Gender: {reader3[3]}");
+                            Console.WriteLine($"Birth Date: {reader3[4]}");
+                            Console.WriteLine($"Address: {reader3[5]}");
+                            Console.WriteLine();
+                        }
+                        reader3.Close();
+                    }
                     //write 2 overloads for Patient search - by name and by ID - 2 static methods
                     string queryString2 = $@" 
                     SELECT
@@ -212,7 +207,58 @@ namespace HospitalProject.BusinessLogic
 
                     break;
 
-                case "3":
+                    Console.WriteLine("Select an action:" +
+                    "\n1. Edit the patient" +
+                    "\n2. Remove the patient" +
+                    "\n3. View records of the patient" +
+                    "\n4. Search a record" + //edit, remove, view tests, search a test (edit, remove), add a test, view therapies, search a therapy (edit, remove), add a therapy
+                    "\n5. Add a record" +
+                    "\nEXIT. Go to the main menu");
+
+                    //START HERE
+
+                //Add a patient
+                case 2:
+                    Patient patient = new();
+                    Console.WriteLine("First Name: ");
+                    patient.FirstName = Console.ReadLine().Trim();
+                    Console.WriteLine("Last Name: ");
+                    patient.LastName = Console.ReadLine().Trim(); ;
+                    Console.WriteLine("Gender: ");
+                    patient.Gender = Console.ReadLine().Trim(); ;
+                    Console.WriteLine("Birth Date: ");
+                    patient.BirthDate = DateTime.Parse(Console.ReadLine().Trim());
+                    Console.WriteLine("Address: ");
+                    patient.Address = Console.ReadLine().Trim(); ;
+
+                    string queryString = $@"
+                    INSERT INTO 
+                    [dbo].[Patient]
+                    ([First Name], 
+                    [Last Name], 
+                    [Gender], 
+                    [Birth Date], 
+                    [Address])
+                    VALUES('{patient.FirstName}', '{patient.LastName}', '{patient.Gender}', '{patient.BirthDate}', '{patient.Address}')";
+
+                    SqlConnection connection = new(connectionString);
+                    connection.Open();
+                    SqlCommand command = new(queryString, connection);
+                    int result = command.ExecuteNonQuery();
+
+                    // Check Error
+                    if (result < 0)
+                    {
+                        Console.WriteLine("Error inserting data into Database");
+                        break;
+                    }
+                    Console.WriteLine("The patient was added successfully");
+
+                    break;
+
+                case 3:
+
+                    //This is edit the patient
                     Console.WriteLine("Enter Patient ID: ");
                     string Id = Console.ReadLine().Trim();
                     Console.WriteLine();
@@ -335,7 +381,9 @@ namespace HospitalProject.BusinessLogic
                         }
                     }
 
-                case "4":
+                case 4:
+
+                    //this is create record
                     Console.WriteLine("You can create a record for an existing patient only. Enter Patient ID:"); // plus by name
                     string patientId = Console.ReadLine().Trim();
                     Console.WriteLine();
