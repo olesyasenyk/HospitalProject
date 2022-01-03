@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2948e517-c993-426a-8a58-e8f913944366": {
+      "ProjectGuid": "2948e517-c993-426a-8a58-e8f913944366",
+      "DisplayName": "HospitalProject",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "b32ab2cb-79d0-46ea-bcae-be8a0840f4b7": {
+      "ProjectGuid": "b32ab2cb-79d0-46ea-bcae-be8a0840f4b7",
+      "DisplayName": "HospitalProject.BusinessLogic",
+      "ColorIndex": 1
+    },
+    "b77d1a1e-9e29-44b0-be0d-aaed6420f1af": {
+      "ProjectGuid": "b77d1a1e-9e29-44b0-be0d-aaed6420f1af",
+      "DisplayName": "HospitalProject.Presentation",
+      "ColorIndex": 2
+    },
+    "8f649662-ded1-40fc-914e-8a47753262ce": {
+      "ProjectGuid": "8f649662-ded1-40fc-914e-8a47753262ce",
+      "DisplayName": "HospitalProject.DataAccess",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

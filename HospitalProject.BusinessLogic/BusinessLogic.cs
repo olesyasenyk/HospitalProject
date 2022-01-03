@@ -121,18 +121,18 @@ namespace HospitalProject.BusinessLogic
                 "\n4. Search a department" +
                 "\nEXIT - to exit the application");
 
-            string userChoice = Int32.Parse(Console.ReadLine().Trim());
+            int userChoice = Int32.Parse(Console.ReadLine().Trim());
 
             string connectionString = @"Data Source=.\SQLEXPRESS;Database=Hospital;Integrated Security=True";
 
             switch (userChoice)
             {   //Search a patient
                 case 1:
-                    Console.WriteLine("Enter patient ID or Last Name: ");
+                    Console.WriteLine("Enter patient ID or Last Name: ");//bring to one so tht we have only reader1; if by surname - find ID and then do as with id
                     string patient = Console.ReadLine().Trim();
                     Console.WriteLine();
 
-                    if (patient.All(char.isDigit))
+                    if (patient.All(char.IsDigit))// int patiendID = patient; if not - show all patients with this surname and find the required patientID
                     {
                         string queryString1 = $@"
                         SELECT
@@ -143,12 +143,12 @@ namespace HospitalProject.BusinessLogic
                         p.[Birth Date],
                         p.[Address]
                         FROM [dbo].[Patient] AS p                  
-                        WHERE p.[Id] = '{Id}'";
+                        WHERE p.[Id] = '{patient}'";
 
                         SqlConnection connection1 = new(connectionString);
                         connection1.Open();
-                        SqlCommand command1 = new(queryString3, connection3);
-                        SqlDataReader reader1 = command3.ExecuteReader();
+                        SqlCommand command1 = new(queryString1, connection1);
+                        SqlDataReader reader1 = command1.ExecuteReader();
 
                         if (!reader1.HasRows)
                         {
@@ -159,15 +159,15 @@ namespace HospitalProject.BusinessLogic
 
                         while (reader1.Read())
                         {
-                            Console.WriteLine($"Patient ID: {reader3[0]}");
-                            Console.WriteLine($"First Name: {reader3[1]}");
-                            Console.WriteLine($"Last Name: {reader3[2]}");
-                            Console.WriteLine($"Gender: {reader3[3]}");
-                            Console.WriteLine($"Birth Date: {reader3[4]}");
-                            Console.WriteLine($"Address: {reader3[5]}");
+                            Console.WriteLine($"Patient ID: {reader1[0]}");
+                            Console.WriteLine($"First Name: {reader1[1]}");
+                            Console.WriteLine($"Last Name: {reader1[2]}");
+                            Console.WriteLine($"Gender: {reader1[3]}");
+                            Console.WriteLine($"Birth Date: {reader1[4]}");
+                            Console.WriteLine($"Address: {reader1[5]}");
                             Console.WriteLine();
                         }
-                        reader3.Close();
+                        reader1.Close();
                     }
                     //write 2 overloads for Patient search - by name and by ID - 2 static methods
                     string queryString2 = $@" 
@@ -179,7 +179,7 @@ namespace HospitalProject.BusinessLogic
                     p.[Birth Date],
                     p.[Address]
                     FROM [dbo].[Patient] AS p                  
-                    WHERE p.[Last Name] = '{surname}'";
+                    WHERE p.[Last Name] = '{patient}'";
 
                     SqlConnection connection2 = new(connectionString);
                     connection2.Open();
@@ -205,8 +205,6 @@ namespace HospitalProject.BusinessLogic
                     }
                     reader2.Close();
 
-                    break;
-
                     Console.WriteLine("Select an action:" +
                     "\n1. Edit the patient" +
                     "\n2. Remove the patient" +
@@ -215,21 +213,32 @@ namespace HospitalProject.BusinessLogic
                     "\n5. Add a record" +
                     "\nEXIT. Go to the main menu");
 
-                    //START HERE
+                    int patientAction = Int32.Parse(Console.ReadLine().Trim());
+
+                    switch (patientAction)
+                    {
+                        case 1:
+                            break;
+
+                    }
+
+                    break;
+
+                //START HERE
 
                 //Add a patient
                 case 2:
-                    Patient patient = new();
+                    Patient newPatient = new();
                     Console.WriteLine("First Name: ");
-                    patient.FirstName = Console.ReadLine().Trim();
+                    newPatient.FirstName = Console.ReadLine().Trim();
                     Console.WriteLine("Last Name: ");
-                    patient.LastName = Console.ReadLine().Trim(); ;
+                    newPatient.LastName = Console.ReadLine().Trim(); ;
                     Console.WriteLine("Gender: ");
-                    patient.Gender = Console.ReadLine().Trim(); ;
+                    newPatient.Gender = Console.ReadLine().Trim(); ;
                     Console.WriteLine("Birth Date: ");
-                    patient.BirthDate = DateTime.Parse(Console.ReadLine().Trim());
+                    newPatient.BirthDate = DateTime.Parse(Console.ReadLine().Trim());
                     Console.WriteLine("Address: ");
-                    patient.Address = Console.ReadLine().Trim(); ;
+                    newPatient.Address = Console.ReadLine().Trim(); ;
 
                     string queryString = $@"
                     INSERT INTO 
@@ -239,7 +248,7 @@ namespace HospitalProject.BusinessLogic
                     [Gender], 
                     [Birth Date], 
                     [Address])
-                    VALUES('{patient.FirstName}', '{patient.LastName}', '{patient.Gender}', '{patient.BirthDate}', '{patient.Address}')";
+                    VALUES('{newPatient.FirstName}', '{newPatient.LastName}', '{newPatient.Gender}', '{newPatient.BirthDate}', '{newPatient.Address}')";
 
                     SqlConnection connection = new(connectionString);
                     connection.Open();
