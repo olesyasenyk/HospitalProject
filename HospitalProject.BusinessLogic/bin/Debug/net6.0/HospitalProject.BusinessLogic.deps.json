@@ -91,6 +91,9 @@
       },
       "System.Security.Principal.Windows/4.7.0": {},
       "HospitalProject.DataAccess/1.0.0": {
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.3"
+        },
         "runtime": {
           "HospitalProject.DataAccess.dll": {}
         }

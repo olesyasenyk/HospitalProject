@@ -1,8 +1,11 @@
-﻿namespace HospitalProject;
+﻿using System.Threading.Tasks;
+
+namespace HospitalProject;
 
 class Program
 {
     static async Task Main()
-       => Presentation.Presentation.Run();// what about set as startup project?
-       
+       => await Presentation.Presentation.Run();
 }
+
+

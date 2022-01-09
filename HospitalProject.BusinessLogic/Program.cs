@@ -1,10 +1,5 @@
-﻿using HospitalProject.BusinessLogic;
-
-class Program
+﻿class Program
 {
-    static void Main()
-    {
-        BusinessLogic.Run();
-    }
+    static void Main() { }
 }
 
