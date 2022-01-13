@@ -73,27 +73,21 @@ namespace HospitalProject.DataAccess
 
             while (reader.Read())
             {
-                Console.WriteLine(reader[0]);
-                Console.WriteLine(reader[1]);
-                Console.WriteLine(reader[2]);
+                Patient patient = new();
+
+                patient.PatientID = (int)reader[0];
+                patient.FirstName = (string)reader[1];
+                patient.LastName = (string)reader[2];
+                patient.Gender = (string)reader[3];
+                patient.BirthDate = (DateTime)reader[4];
+                patient.Address = (string)reader[5];
+
+                patients.Add(patient);
             }
 
-            //Patient patient = new();
-
-            //while (reader.Read())
-            //{
-            //    patient.PatientID = (int)reader[0];
-            //    patient.FirstName = (string)reader[1];
-            //    patient.LastName = (string)reader[2];
-            //    patient.Gender = (string)reader[3];
-            //    patient.BirthDate = (DateTime)reader[4];
-            //    patient.Address = (string)reader[5];
-            //}
             reader.Close();
 
             connection.Close();//???????????????
-
-            //patients.Append(patient);
 
             return patients;
         }

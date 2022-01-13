@@ -26,11 +26,11 @@ namespace HospitalProject.BusinessLogic
             return searchedPatients;
         }
 
-        public static Patient SearchPatient(int id) 
-        {         
+        public static Patient SearchPatient(int id)
+        {
             Patient searchedPatient = new();
             DataAccess.Patient foundPatient = new();
-                 
+
             foundPatient = DA.SearchPatient(id);
 
             searchedPatient.PatientID = foundPatient.PatientID;//?????????????
@@ -40,9 +40,29 @@ namespace HospitalProject.BusinessLogic
             searchedPatient.BirthDate = foundPatient.BirthDate;
             searchedPatient.Address = foundPatient.Address;
 
-            return searchedPatient;           
+            return searchedPatient;
         }
+
+        public static Patient UpdatePatient(int id, string firstName, string lastName, string gender, DateTime birthdate, string address)
+        {
+            Patient patient = new();
+            patient.PatientID = id;
+            patient.FirstName = firstName;
+            patient.LastName = lastName;
+            patient.Gender = gender;
+            patient.BirthDate = birthdate;
+            patient.Address = address;
+            return patient;
+        }
+        
+           
+        
+
+
+
     }
+
+    
 }
        
     
